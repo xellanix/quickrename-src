@@ -1,0 +1,25 @@
+// Copyright (c) Microsoft Corporation and Contributors.
+// Licensed under the MIT License.
+
+namespace QuickRename
+{
+    runtimeclass ExplorerItem : Microsoft.UI.Xaml.Data.INotifyPropertyChanged
+    {
+        ExplorerItem();
+        ExplorerItem(String itemName, String itemPath, String itemIcon, String itemRenamed, Boolean isRemember);
+
+        String ItemName;
+        String ItemPath;
+        String ItemIcon;
+        String ItemRenamed;
+        Boolean IsRemember;
+    }
+
+    [default_interface]
+    runtimeclass MainWindow : Microsoft.UI.Xaml.Window
+    {
+        MainWindow();
+
+        Windows.Foundation.Collections.IObservableVector<Object> ExplorerItems;
+    }
+}
